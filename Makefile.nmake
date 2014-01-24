@@ -1,0 +1,19 @@
+
+all: erlman.exe werlman.exe
+
+erlman.exe: erlman.obj erlman.res
+	link /nologo erlman.obj erlman.res shell32.lib
+
+erlman.obj: erlman.c
+	cl /nologo /c /O2 erlman.c
+
+erlman.res: erlman.rc erlang.ico
+	rc erlman.rc
+
+werlman.exe: werlman.cs Properties\AssemblyInfo.cs erlang.ico
+	csc /nologo /optimize /target:winexe /win32icon:erlang.ico werlman.cs Properties\AssemblyInfo.cs
+
+clean:
+	del /f *.exe
+	del /f *.res
+	del /f *.obj

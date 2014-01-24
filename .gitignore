@@ -1,0 +1,17 @@
+*.swp
+*.ncb
+*.sln.cache
+*.exe
+*.res
+*.dll
+*.obj
+*.user
+*.suo
+*.pdb
+*.sdf
+*.opensdf
+*.tmp
+/Bin
+/Release
+/Debug
+/obj
